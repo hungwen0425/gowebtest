@@ -1,0 +1,47 @@
+{{template "header"}}
+<title>登入 - 我的新聞</title>
+</head>
+
+<body>
+	<div class="container" style="width: 500px; padding-top: 50px;">
+		<form method="POST" action="/login">
+			<div class="form-group">
+				<label>Account</label>
+				<input id="account" class="form-control" placeholder="Please Enter Account" name="account"> 
+			</div>
+			<div class="form-group">
+				<label >Password</label> 
+				<input id="pwd" type="password" class="form-control" name="pwd">
+			</div>
+			<div class="form-group form-check" >
+				<input type="checkbox" name="autoLogin">
+				<label class="form-check-label">自動登入</label>
+			</div>
+			<button type="submit" class="btn btn-primary" onclick="return checkInput();">登入</button>
+			<button type="submit" class="btn btn-secondary" onclick="backToHome();">返回</button>
+		</form>
+		<script type="text/javascript">
+			function checkInput() {
+				var account = $("#account").val();
+				if (account.length == 0) {
+					alert("請輸入帳號");
+					return false;
+				}
+				
+				var pwd = $("#pwd").val();
+				if (account.length == 0) {
+					pwd("請輸入帳號");
+					return false;
+				}
+				
+				return true;
+			}
+			
+			function backToHome() {
+				window.location.href = "/";
+				return false;
+			}
+		</script>
+	</div>
+</body>
+</html>

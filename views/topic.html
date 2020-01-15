@@ -1,0 +1,52 @@
+{{template "header"}}
+	<title>文章 - 我的新聞</title>
+</head>
+
+<body>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+			{{template "navbar" .}}
+		</nav>
+	</div>
+	<div class="container" style="padding-top: 50px;">
+		<h2>文章列表</h2>
+		<a href="/topic/add" class="btn btn-primary">添加文章</a>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>No.</th>
+					<th>文章名稱</th>
+					<th>最後更新</th>
+					<th>瀏覽</th>
+					<th>回覆數</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{range .Topics}}
+				<tr>
+					<th>{{.Id}}</th>
+					<th>{{.Title}}</th>
+					<th>{{.Updated}}</th>
+					<th>{{.Views}}</th>
+					<th>{{.ReplyCount}}</th>
+					<th><a href="/topic/delete?tid={{.Id}}">刪除</a></th>
+				</tr>
+				{{end}}
+			</tbody>
+		</table>
+		
+		<script type="text/javascript">
+			function checkInput() {
+				var account = $("#name").val();
+				if (account.length == 0) {
+					alert("請輸入分類名稱");
+					return false;
+				}
+				
+				return true;
+			}
+		</script>
+	</div>
+</body>
+</html>

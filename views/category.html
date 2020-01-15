@@ -1,0 +1,58 @@
+{{template "header"}}
+	<title>新聞分類 - 我的新聞</title>
+</head>
+
+<body>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+			{{template "navbar" .}}
+		</nav>
+	</div>
+	<div class="container" style="padding-top: 50px;">
+		<h2>分類列表</h2>
+		<form method="GET" action="/category">
+			<div class="form-group">
+				<label>Account</label>
+				<input id="name" class="form-control" placeholder="Please Enter Category Name" name="name"> 
+			</div>
+			<input type="hidden" name="op" value="add">
+			<button type="submit" class="btn btn-primary" onclick="return checkInput();">新增</button>
+		</form>
+		
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>No.</th>
+					<th>名稱</th>
+					<th>文章數</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{range .Categories}}
+				<tr>
+					<th>{{.Id}}</th>
+					<th>{{.Title}}</th>
+					<th>{{.TopicCount}}</th>
+					<th>
+						<a href="/category?op=del&id={{.Id}}">刪除</a>
+					</th>
+				</tr>
+				{{end}}
+			</tbody>
+		</table>
+		
+		<script type="text/javascript">
+			function checkInput() {
+				var account = $("#name").val();
+				if (account.length == 0) {
+					alert("請輸入分類名稱");
+					return false;
+				}
+				
+				return true;
+			}
+		</script>
+	</div>
+</body>
+</html>

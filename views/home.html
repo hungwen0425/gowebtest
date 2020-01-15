@@ -1,0 +1,21 @@
+{{template "header"}}
+	<title>首頁 - 我的新聞</title>
+</head>
+
+<body>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+			{{template "navbar" .}}
+		</nav>
+	</div>
+	<div class="container" style="padding-top: 50px;">
+		{{range .Topics}}
+		<div class="page-header">
+			<h2 class="font-weight-bold">{{.Title}}</h2>
+			<h6 class="text-muted">文章發表於 {{.Created}} 共有 {{.Views}} 次瀏覽，{{.ReplyCount}} 個評論</h6>
+			<p>{{.Content}}</p>
+		</div>
+		{{end}}
+	</div>
+</body>
+</html>
