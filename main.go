@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
-	"webtest/controllers"
-	"webtest/models"
+	"gowebtest/controllers"
+	"gowebtest/models"
 )
 
 func init() {

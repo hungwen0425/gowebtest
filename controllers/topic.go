@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/astaxie/beego"
-	"webtest/models"
+	"gowebtest/models"
 )
 
 type TopicController struct {

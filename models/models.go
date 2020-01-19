@@ -5,10 +5,7 @@ import (
 	"path"
 	"strconv"
 	"time"
-	//"database/sql"
 	"github.com/astaxie/beego/orm"
-	//"github.com/astaxie/beego/validation"
-	//_ "github.com/go-sql-driver/mysql"
 	_ "github.com/mattn/go-sqlite3"
 	"github.com/unknown/com"
 )
@@ -16,14 +13,6 @@ import (
 const (
 	_DB_NAME        = "data/beego.db"
 	_SQLITE3_DRIVER = "sqlite3"
-	/*_DB_HOST := beego.AppConfig.String(“db.host”)
-	_DB_PORT := beego.AppConfig.String(“db.port”)
-	_DB_NAME = beego.AppConfig.String(“db.name”)
-	_MYSQL_DRIVER = "mysql"
-	_DB_USER := beego.AppConfig.String(“db.user”)
-	_DB_PWD := beego.AppConfig.String(“db.pass”)
-	_DB_TIME_ZONE := beego.AppConfig.String(“db.timezone”)
-	*/
 )
 
 type Category struct {
